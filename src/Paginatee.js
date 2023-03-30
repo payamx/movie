@@ -1,15 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { type } from "@testing-library/user-event/dist/type";
 import { Button } from "bootstrap";
-import {React,useContext} from "react";
-import { Appcontext } from "./App";
+import {React,} from "react";
 
-const Paginate = () => {
-
-  const{currentPage,setCurrentPage,}=useContext(Appcontext);
+const Paginatee = ({totalPages=250 ,postperpage ,currentPage, setcurrent}) => {
+ 
   const pageNumbers = [];
-    const totalPages=250;
-    console.log(totalPages)
+  
 
   for (let i = parseInt(currentPage) - 1; i >= currentPage - 3; i--) {
     if (i > 0 && i <= totalPages) {
@@ -30,13 +27,13 @@ const Paginate = () => {
 
   const previousPage = () => {
     if (currentPage - 1 >= 1) {
-      setCurrentPage(currentPage - 1);
+      setcurrent(currentPage - 1);
     }
   };
 
   const nextPage = () => {
     if (currentPage + 1 <= totalPages) {
-      setCurrentPage(currentPage + 1);
+      setcurrent(currentPage + 1);
     }
   };
 
@@ -58,7 +55,7 @@ const Paginate = () => {
               <>
                 <li
                   class="page-item"
-                  onClick={() => setCurrentPage(number)}
+                  onClick={() => setcurrent(number)}
                   key={index}
                 >
                   <a
@@ -66,7 +63,7 @@ const Paginate = () => {
                     className={
                       currentPage === number ? "page-link active" : "page-link"
                     }
-                    href="#"
+                    href="!#"
                   >
                     {number}
                   </a>
@@ -77,7 +74,7 @@ const Paginate = () => {
               <a class="page-link">...</a>
             </li>
             <li class="page-item">
-              <a class="page-link" href="#" onClick={nextPage}>
+              <a class="page-link" href="" onClick={nextPage}>
                 Next
               </a>
 
@@ -90,4 +87,4 @@ const Paginate = () => {
   );
 };
 
-export default Paginate;
+export default Paginatee;
