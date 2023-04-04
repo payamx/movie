@@ -1,22 +1,21 @@
 import React from 'react'
-import { Navbar } from 'react-bootstrap'
-import { Outlet } from 'react-router-dom'
+import {Outlet} from 'react-router-dom'
 import Navbartop from './Navbar'
 
 const Sharedlinks = () => {
-  return (
-  <>
+    return (
+        <>
 
 
-  <Navbartop/>
+            <Navbartop/>
 
-   <Outlet/>
-  
-  
-  </>
-    
+            <Outlet/>
 
-  )
+
+        </>
+
+
+    )
 }
 
 export default Sharedlinks

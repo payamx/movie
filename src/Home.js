@@ -1,25 +1,24 @@
-
 import React from 'react'
-import { useContext } from "react";
-import {Appcontext} from "./App"
 import Cards from './Card'
 import Paginate from './Paginate'
+
 const Home = () => {
-  return (
+        
+    return (
 
-    <>
-      <div>
+        <>
+            <div>
 
-      <Cards />
+                <Cards/>
 
-      <Paginate  />
+                <Paginate/>
 
 
-      </div>
+            </div>
 
-    
-    </>
-  )
+
+        </>
+    )
 }
 
 export default Home
