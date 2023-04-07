@@ -1,12 +1,8 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import {React, useContext} from "react";
-import {AppContext} from "./App";
+import {React} from "react";
 
-const Paginate = () => {
+const Paginate = ({currentPage, totalPages, setCurrentPage}) => {
 
-    const {currentPage, setCurrentPage,} = useContext(AppContext);
     const pageNumbers = [];
-    const totalPages = 250;
 
     for (let i = parseInt(currentPage) - 1; i >= currentPage - 3; i--) {
         if (i > 0 && i <= totalPages) {
@@ -36,52 +32,45 @@ const Paginate = () => {
         }
     };
 
-    return (
-        <>
-            <div>
-                <nav aria-label="Page navigation example mt-5">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item ">
-                            <a class="page-link" href="" onClick={previousPage}>
-                                Previous
+    return (<>
+        <div>
+            <nav aria-label="Page navigation example mt-5">
+                <ul className="pagination justify-content-center">
+                    <li className="page-item ">
+                        <a className="page-link" href="" onClick={previousPage}>
+                            Previous
+                        </a>
+                    </li>
+                    <li className="page-item ">
+                        <a className="page-link">...</a>
+                    </li>
+                    {pageNumbers?.map((number, index) => (<>
+                        <li
+                            className="page-item"
+                            onClick={() => setCurrentPage(number)}
+                            key={index}
+                        >
+                            <a
+                                className={currentPage === number ? "page-link active" : "page-link"}
+                                href="#"
+                            >
+                                {number}
                             </a>
                         </li>
-                        <li class="page-item ">
-                            <a class="page-link">...</a>
-                        </li>
-                        {pageNumbers?.map((number, index) => (
-                            <>
-                                <li
-                                    class="page-item"
-                                    onClick={() => setCurrentPage(number)}
-                                    key={index}
-                                >
-                                    <a
-                                        class="page-link"
-                                        className={
-                                            currentPage === number ? "page-link active" : "page-link"
-                                        }
-                                        href="#"
-                                    >
-                                        {number}
-                                    </a>
-                                </li>
-                            </>
-                        ))}
-                        <li class="page-item ">
-                            <a class="page-link">...</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" onClick={nextPage}>
-                                Next
-                            </a>
+                    </>))}
+                    <li className="page-item ">
+                        <a className="page-link">...</a>
+                    </li>
+                    <li className="page-item">
+                        <a className="page-link" href="#" onClick={nextPage}>
+                            Next
+                        </a>
 
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </>
-    );
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </>);
 };
 
 export default Paginate;
