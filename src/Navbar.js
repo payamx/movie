@@ -42,17 +42,18 @@ function Navbartop() {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Dropdown
+                                    conect
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a className="dropdown-item" href="#">
-                                            Action
+                                        <a className="dropdown-item" href="/signup">
+                                            Register
                                         </a>
                                     </li>
                                     <li>
                                         <a className="dropdown-item" href="#">
-                                            Another action
+
+                                            Login
                                         </a>
                                     </li>
                                     <li>

@@ -7,6 +7,7 @@ import SharedLinks from "./Sharedlinks";
 import Login from "./Login"
 import Home from "./Home";
 import Singlecard from "./Singlecard";
+import Signup from "./Signup";
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
                         <Route index element={<Home/>}/>
                         <Route path="/movies/:cardId" element={<Singlecard/>}/>
                         {/*<Route path="/movies/category/:catId" element={<Category/>}/>*/}
-                        <Route path="login" element={<Login/>}/>
                         <Route path="*" element={<h1>erro page</h1>}/>
+                        <Route path="login" element={<Login/>}/>
+                        <Route path="signup" element={<Signup/>}/>
                     </Route>
                 </Routes>
 
