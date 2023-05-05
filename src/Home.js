@@ -12,6 +12,7 @@ const Home = () => {
     const [metadata, setMetaData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
     //category sates
     const [categories, setCategories] = useState([]);
     const [catid, setCatid] = useState(null);

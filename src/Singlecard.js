@@ -47,17 +47,7 @@ const Singlecard = () => {
     return (
 
         <>
-            {/*    {data && <div className="container  d-flex flex-row-reverse  ">*/}
-            {/*        <div className="  card " style={{width: "18rem"}}>*/}
-            {/*            <img src={data.poster} className="card-img-top" alt="..."/>*/}
-            {/*            <div className="card-body">*/}
-            {/*                <h5 className="card-title">{data.title}</h5>*/}
-            {/*                <p className="card-text">{data.plot}</p>*/}
-            {/*                <a href="#" className="btn btn-primary">Go somewhere</a>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>}*/}
-            {/*<hr/>*/}
+
             {data &&
                 <div className="container ">
                     <div className="  d-flex  ">
