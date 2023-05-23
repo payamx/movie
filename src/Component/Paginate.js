@@ -1,6 +1,10 @@
-import {React} from "react";
-
+import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 const Paginate = ({currentPage, totalPages, setCurrentPage}) => {
+
+
+    let uuid = crypto.randomUUID();
+
 
     const pageNumbers = [];
 
@@ -34,7 +38,7 @@ const Paginate = ({currentPage, totalPages, setCurrentPage}) => {
 
     return (<>
         <div>
-            <nav aria-label="Page navigation example mt-5">
+            <nav  aria-label="Page navigation example mt-5">
                 <ul className="pagination justify-content-center">
                     <li className="page-item ">
                         <a className="page-link" href="" onClick={previousPage}>
@@ -44,15 +48,15 @@ const Paginate = ({currentPage, totalPages, setCurrentPage}) => {
                     <li className="page-item ">
                         <a className="page-link">...</a>
                     </li>
-                    {pageNumbers?.map((number, index) => (<>
+                    {pageNumbers?.map((number) => (<>
                         <li
                             className="page-item"
                             onClick={() => setCurrentPage(number)}
-                            key={index}
+
                         >
                             <a
                                 className={currentPage === number ? "page-link active" : "page-link"}
-                                href="#"
+                                href="#num" key={uuidv4()}
                             >
                                 {number}
                             </a>
@@ -62,7 +66,7 @@ const Paginate = ({currentPage, totalPages, setCurrentPage}) => {
                         <a className="page-link">...</a>
                     </li>
                     <li className="page-item">
-                        <a className="page-link" href="#" onClick={nextPage}>
+                        <a className="page-link" href="" onClick={nextPage}>
                             Next
                         </a>
 

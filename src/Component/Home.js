@@ -33,7 +33,7 @@ const Home = () => {
         setSearch(search)
         setCatid(null)
     }
-
+//gettin data from api per page
     useEffect(() => {
 
         const getData = async (currentPage) => {
@@ -54,7 +54,7 @@ const Home = () => {
 
     }, [currentPage]);
 
-
+//search movies from api
     useEffect(() => {
         const searchMovies = async () => {
             try {
@@ -76,8 +76,10 @@ const Home = () => {
         }
     }, [search]);
 
-    useEffect(() => {
 
+    //getting category from api
+
+    useEffect(() => {
 
         const categories = async () => {
             try {
@@ -92,6 +94,8 @@ const Home = () => {
         }
         categories();
     }, []);
+
+
     useEffect(() => {
 
         const categoryFind = async () => {

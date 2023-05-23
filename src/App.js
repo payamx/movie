@@ -7,11 +7,11 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-import SharedLinks from "./Sharedlinks";
-import Login from "./Login"
-import Home from "./Home";
-import Singlecard from "./Singlecard";
-import Signup from "./Signup";
+import SharedLinks from "./Component/Sharedlinks";
+import Login from "./Page/Login"
+import Home from "./Component/Home";
+import Singlecard from "./Component/Singlecard";
+import Signup from "./Page/Signup";
 
 function App() {
 

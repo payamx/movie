@@ -17,6 +17,7 @@ const Category = ({categories, setCatid}) => {
                             <li className=" d-flex  flex-row me-auto justify-content-between pb-1 border-bottom  "
                                 key={category.id}>
                                 <div type="button" className="  "
+
                                      onClick={() => {
                                          setCatid(category.id)
                                      }}>{category.name}

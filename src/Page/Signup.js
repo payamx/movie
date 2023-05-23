@@ -18,14 +18,18 @@ const Signup = () => {
     const onsubmit = async (data) => {
         console.log(data, "before sync")
         try {
-            const response = await axios.post("https://moviesapi.ir/api/v1/register", {
-
-
-                name: "firstName",
-                email: "email",
-                password: "confirmpassword"
-
-            })
+            const response = await axios.post("https://moviesapi.ir/api/v1/register",
+                JSON.stringify(    {
+                    name: "firstName",
+                    email: "email",
+                    password: "confirmpassword"
+                })
+            ,{
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
             console.log(response.data, "resone")
         } catch (e) {
             console.log(e.response.data.message)

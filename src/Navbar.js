@@ -1,10 +1,10 @@
 function Navbartop() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark  ">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-50 shadow " >
                 <div className="container ">
-                    <a className="navbar-brand " href="google.com">
-                        Gallery
+                    <a className="navbar-brand " href="/">
+                        Home
                     </a>
                     <button
                         className="navbar-toggler"
@@ -42,16 +42,16 @@ function Navbartop() {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    conect
+                                    Signup/Login
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
                                         <a className="dropdown-item" href="/signup">
-                                            Register
+                                            Signup
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="#">
+                                        <a className="dropdown-item" href="/login">
 
                                             Login
                                         </a>
@@ -60,8 +60,8 @@ function Navbartop() {
                                         <hr className="dropdown-divider"/>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="#">
-                                            Something else here
+                                        <a className="dropdown-item" href="/logout">
+                                            Logout
                                         </a>
                                     </li>
                                 </ul>
@@ -72,13 +72,13 @@ function Navbartop() {
             </nav>
 
             {/* carousel */}
-            <br/>
+
             <div
                 id="carouselExampleCaptions"
                 className="carousel slide   "
                 data-bs-ride="carousel "
             >
-                <div className="carousel-indicators">
+                <div className="carousel-indicators" >
                     <button
                         type="button"
                         data-bs-target="#carouselExampleCaptions"
