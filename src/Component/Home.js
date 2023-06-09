@@ -1,21 +1,22 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useReducer, useState} from 'react'
 import Paginate from './Paginate'
 import axios from "axios";
 import SearchBar from "./SearchBar";
-import Cards from "./Card";
 import Category from "./Category";
+import {ACTION_FETCH, axiosReducer, initialState} from "../Reducer/Fetchreducer";
+import Cards from "./Card";
 
 const Home = () => {
-
+    const [state, dispatch] = useReducer(axiosReducer, initialState);
     //data state
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
     const [metadata, setMetaData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(null);
 
     //category sates
     const [categories, setCategories] = useState([]);
-    const [catid, setCatid] = useState(null);
+    const [catId, setCatId] = useState(null);
 
     //searching states
     const [search, setSearch] = useState(null)
@@ -26,27 +27,28 @@ const Home = () => {
 
     function setCategory(categoryId) {
         setSearch(null)
-        setCatid(categoryId)
+        setCatId(categoryId)
     }
 
     function setSearchName(search) {
         setSearch(search)
-        setCatid(null)
+        setCatId(null)
     }
+
 //gettin data from api per page
     useEffect(() => {
 
         const getData = async (currentPage) => {
             try {
+                dispatch({type: ACTION_FETCH.FETCH_START})
                 const response = await axios.get(`http://moviesapi.ir/api/v1/movies?page=${currentPage}`);
-                setData(response.data.data);
+                dispatch({type: ACTION_FETCH.FETCH_SUCCESS, data: response.data.data});
+                console.log(response.data.data)
                 setMetaData(response.data.metadata)
-                setError(null);
             } catch (err) {
-                setError(err.message);
-                setData(null);
+                dispatch({type: ACTION_FETCH.FETCH_FAIL})
             } finally {
-                setLoading(false);
+                // dispatch({type: ACTION_FETCH.FINALLY})
             }
         };
 
@@ -58,17 +60,17 @@ const Home = () => {
     useEffect(() => {
         const searchMovies = async () => {
             try {
-                const response = await axios.get(`http://moviesapi.ir/api/v1/movies?q=${search}&page=${currentPage}`);
-                setData(response.data.data);
-                setMetaData(response.data.metadata)
-                setError(null);
+                dispatch({type: ACTION_FETCH.FETCH_START})
 
+                const response = await axios.get(`http://moviesapi.ir/api/v1/movies?q=${search}&page=${currentPage}`);
+                setMetaData(response.data.metadata)
+                dispatch({type: ACTION_FETCH.FETCH_SUCCESS, data: response.data.data})
                 // setCurrentPage(1)
             } catch (err) {
-                setError(err.message);
-                setData(null);
+                dispatch({type: ACTION_FETCH.FETCH_FAIL})
             } finally {
-                setLoading(false);
+
+                // dispatch({type: ACTION_FETCH.FINALLY})
             }
         }
         if (search != null) {
@@ -88,7 +90,6 @@ const Home = () => {
             } catch (e) {
 
                 setCategory(null)
-                setError(e.message)
 
             }
         }
@@ -100,25 +101,21 @@ const Home = () => {
 
         const categoryFind = async () => {
             try {
-                const response = await axios.get(`https://moviesapi.ir/api/v1/genres/${catid}/movies?`);
-                setData(response.data.data);
+                const response = await axios.get(`https://moviesapi.ir/api/v1/genres/${catId}/movies?`);
+                dispatch({type: ACTION_FETCH.FETCH_SUCCESS, data: response.data.data})
                 setMetaData(response.data.metadata)
-                // console.log(response.data)
-                setError(null);
             } catch (err) {
-                setError(err.message);
-                setData(null);
+                dispatch({type: ACTION_FETCH.FETCH_FAIL})
             } finally {
-                setLoading(false);
+                // dispatch({type: ACTION_FETCH.FINALLY})
             }
         };
-        if (catid != null) {
+        if (catId != null) {
             categoryFind();
         }
 
 
-    }, [catid]);
-
+    }, [catId]);
     return (
 
         <>
@@ -140,7 +137,12 @@ const Home = () => {
 
                     <div className="col-md-10 mx-auto mb-3">
 
-                        {data && <Cards cardData={data}/>}
+                        {state.data && <Cards cardData={state.data}/>}
+                        {state.loading && <div className="d-flex justify-content-center">
+                            <div className="spinner-border" role="status">
+                                <span className="sr-only"></span>
+                            </div>
+                        </div>}
 
 
                     </div>

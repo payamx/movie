@@ -1,3 +1,4 @@
+
 function Cards({cardData}) {
 
     //search bar filter
@@ -5,6 +6,7 @@ function Cards({cardData}) {
 // else if (item.title.toLowerCase().includes(searchName.toLowerCase())) {return item}})
     return (<>
         <div>
+
             <div className=" row  " id="num">
                 {cardData?.map((item) => (<div className="col-6  col-md-2 g-md-3" key={item.id}>
                     <div className="card">
