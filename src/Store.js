@@ -10,8 +10,7 @@ export const storeSlice=createSlice({
         password:(state, action)=>{state.password=action.payload.password},
         clearName:(state)=>{state.name=""},
 
-
-    }
+   }
 
 })
 export const {name,password,clearName}=storeSlice.actions
