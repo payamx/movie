@@ -23,7 +23,7 @@ const Category = ({categories, setCatid}) => {
                                      }}>{category.name}
                                 </div>
 
-                                <span className="badge bg-primary rounded-pill px-2">14</span>
+                                <span className="badge bg-primary rounded-pill px-2"><img width="14" height="14" src="https://img.icons8.com/material-two-tone/24/movie-projector.png" alt="movie-projector"/></span>
 
                             </li>
                         </ul>
