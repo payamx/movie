@@ -21,9 +21,9 @@ const Footer = () => {
                         </ul>
 
                     </div>
-                    <div className="col-md-4  ">
+                    <div className=" col-md-4  ">
                         <h3 className=" text-uppercase fw-bold text-warning  pb-3 ">contact us</h3>
-                        <address className=" col-4  ">
+                        <address className="  col col-sm-4  ">
                             <p>
                                 <i className="fas fa-home me-2 " aria-hidden="true"></i>
                                 Iran-Tehran-Azadi Square
@@ -44,7 +44,7 @@ const Footer = () => {
                     </div>
                     <div className="col-md-4  order-sm-first border-end  border-success">
                         <h3 className=" text-uppercase fw-bold text-warning pb-3">About us</h3>
-                        <p className=" col-5  text-white ">
+                        <p className="  col col-sm-5  text-white ">
 
                             outr comnay is the one the best selling
                             movie creattor and selling them to the other

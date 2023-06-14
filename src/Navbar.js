@@ -1,7 +1,7 @@
 function Navbartop() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-50 shadow " >
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 shadow fixed-top " >
                 <div className="container ">
                     <a className="navbar-brand " href="/">
                         Home
@@ -25,12 +25,12 @@ function Navbartop() {
                                     aria-current="page"
                                     href="#google.com"
                                 >
-                                    Home
+                                    Movie
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Link
+                                    Tv show
                                 </a>
                             </li>
                             <li className="nav-item dropdown">
@@ -104,7 +104,7 @@ function Navbartop() {
                 <div className="carousel-inner   ">
                     <div className="carousel-item active">
                         <img
-                            src="https://jssors8.azureedge.net/demos/image-slider/img/faded-monaco-scenery-evening-dark-picjumbo-com-image.jpg"
+                            src="https://www.trendycovers.com/covers/The_Avengers_facebook_cover_1336117616.jpg"
                             className="d-block w-100"
                             alt="..."
                         />
@@ -112,7 +112,7 @@ function Navbartop() {
                     </div>
                     <div className="carousel-item">
                         <img
-                            src="https://wowslider.com/sliders/demo-18/data1/images/shanghai.jpg"
+                            src="https://i.pinimg.com/originals/85/be/7f/85be7f5766e64a4edcf17a02f9cfa0cd.jpg"
                             className="d-block w-100"
                             alt="..."
                         />
@@ -120,7 +120,7 @@ function Navbartop() {
                     </div>
                     <div className="carousel-item">
                         <img
-                            src="http://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg"
+                            src="https://www.fbcoverforyou.com/fbcover/movies/fb-covers-star-wars1.jpg"
                             className="d-block w-100"
                             alt="..."
                         />
