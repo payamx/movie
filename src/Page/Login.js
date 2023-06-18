@@ -39,7 +39,6 @@ const Login = () => {
                     }
                 )
                 axios.defaults.headers.common['Authorization'] = `Bearer ${response?.data['token']}`;
-                console.log("payam kharejjjjjjjjjjjj")
                 setName('');
                 setPassword('');
 
@@ -63,7 +62,7 @@ const Login = () => {
         <>
 
             <div className="container">
-                <div className="row justify-content-center mt-5">
+                <div className="row justify-content-center my-5">
                     <div className="col-md-6">
                         <div className="card">
                             <p>{error}</p>

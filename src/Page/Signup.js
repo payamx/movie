@@ -22,7 +22,7 @@ const Signup = () => {
                 JSON.stringify(    {
                     name: "firstName",
                     email: "email",
-                    password: "confirmpassword"
+                    password: "confirmPassword"
                 })
             ,{
                     headers: {
@@ -40,10 +40,14 @@ const Signup = () => {
     }
     return (
 
-        <div className="d-flex mx-auto col-md-4 border border-1 mt-5 p-4">
+        <div className="d-flex mx-auto col-md-4 border border-1 my-5  px-3">
             <form onSubmit={handleSubmit(onsubmit)} className="container-sm mt-5 ">
-                <div className="">
-                    <div className=" mb-3">
+                <div className=" pb-3 "><h4>Sign up</h4></div>
+
+                <div >
+                    <div className=" mb-3 ">
+
+
                         <label htmlFor="firstName" className="form-label">First name</label>
                         <input type="text" className="form-control" id="firstName" placeholder="Enter your first name"
                                {...register("firstName")}  />
