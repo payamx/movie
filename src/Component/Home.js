@@ -128,7 +128,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="row d-flex flex-column-reverse flex-md-row my-auto">
+                <div className="row d-flex flex-column-reverse flex-md-row my-auto ">
 
                     <div className="  col-md-2 mx-auto my-auto">
                         <Category categories={categories} setCatid={setCategory}/>

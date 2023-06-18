@@ -9,7 +9,7 @@ const Category = ({categories, setCatid}) => {
             <div>
 
                 <div
-                    className="d-flex flex-column    ">
+                    className="  d-md-flex flex-md-column    ">
 
                     {categories?.map((category) => (
                         <ul className="  ">

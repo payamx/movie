@@ -16,6 +16,7 @@ import {Provider} from "react-redux";
 import ReduxTest from "./Page/ReduxTest";
 import {store} from "./Redux/Store"
 import {Comment} from "./Component/Comment";
+import Category from "./Component/Category";
 
 function App() {
 
@@ -31,13 +32,11 @@ function App() {
                             <Route element={<SharedLinks/>}>
                                 <Route index element={<Home/>}/>
                                 <Route path="/movies/:cardId" element={<Singlecard/>}/>
-                                {/*<Route path="/movies/category/:catId" element={<Category/>}/>*/}
                                 <Route path="*" element={<h1>error page</h1>}/>
                                 <Route path="login" element={<Login/>}/>
                                 <Route path="signup" element={<Signup/>}/>
                                 <Route path="counter" element={<Counter/>}/>
                                 <Route path="redux" element={<ReduxTest/>} />
-                                <Route path="comment" element={<Comment/>} />
 
 
                             </Route>

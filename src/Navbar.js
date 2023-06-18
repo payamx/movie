@@ -1,7 +1,15 @@
+
+
+import category from "./Component/Category";
+import Category from "./Component/Category";
 function Navbartop() {
+
+
+
+
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 shadow fixed-top " >
+            <nav className="navbar  navbar-expand-lg navbar-dark bg-dark  shadow fixed-top " >
                 <div className="container ">
                     <a className="navbar-brand " href="/">
                         Home
@@ -66,7 +74,19 @@ function Navbartop() {
                                     </li>
                                 </ul>
                             </li>
+                            <li className="  list-unstyled   d-sm-none">
+                                <a className="nav-link dropdown-toggle" href="#" id="categoryId" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Category
+                                </a>
+                                <ul className="dropdown-menu bg-warning " aria-labelledby="categoryId">
+                                    <li><a className="dropdown-item  text-white bg-dark" href="#">{<Category/>}</a></li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </nav>
